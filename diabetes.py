@@ -146,7 +146,7 @@ classifierKNN = KNeighborsClassifier(n_neighbors = 15)
 classifierKNN.fit(X_train, y_train)
 
 #using Euclidean distance metric
-print("euclidean distance: " + classifierKNN.effective_metric_)#value
+print(classifierKNN.effective_metric_)#value
 
 
 #using Naive Bayes (NB) classifier
@@ -154,7 +154,7 @@ classifierNB = GaussianNB()
 classifierNB.fit(X_train, y_train)
 
 #show prior probability of each class
-print("probability of each class: " + classifierNB.class_prior_)
+print(classifierNB.class_prior_)
 
 
 #using Decision Tree (DT) classifier
@@ -170,7 +170,7 @@ DT = tree.plot_tree(classifierDT,
                     filled = True)
 
 #identifies the important features
-print("important features: " + classifierDT.feature_importances_)#value
+print(classifierDT.feature_importances_)#value
 
 #number of records in test set
 len(X_test)
@@ -252,4 +252,3 @@ probaNB.round(4) # round probabilities to four decimal places, if applicable
 
 #make prediction of class label
 predNB = classifierNB.predict(newdata)
-
